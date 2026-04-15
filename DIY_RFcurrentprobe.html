@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>DIY RF Current Probe - T-EMCompass</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+      #main { color: #000; }
+
+      #main .inner p img {
+        display: block;
+        margin: 1.5em auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      #main table {
+        margin: 2em auto;
+        border-collapse: collapse;
+        width: 80%;
+        max-width: 600px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        color: #000;
+      }
+
+      #main table th, #main table td {
+        border: 1px solid #ddd;
+        padding: 0.75em 1em;
+        text-align: left;
+      }
+
+      #main table th {
+        background-color: #f2f2f2;
+        font-weight: 600;
+      }
+
+      #main table tbody tr:nth-child(odd) {
+        background-color: #fafafa;
+      }
+
+      #main h3 {
+        text-align: center;
+      }
+
+      /* Code block styling */
+      .code-block {
+        background:#0b0f19;
+        color:#e6edf3;
+        padding:20px;
+        border-radius:10px;
+        overflow-x:auto;
+        font-size:13px;
+        line-height:1.5;
+        box-shadow:0 5px 20px rgba(0,0,0,0.3);
+      }
+	  .text-box {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+	text-align: center;
+}
+.text-box strong {
+    color: #1d4ed8;
+}
+    </style>
+</head>
+
+<body class="is-preload">
+
+<header id="header">
+    <a href="index.html" class="title">T-EMCompass</a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="wrapper">
+
+<section id="main" class="wrapper">
+<div class="inner">
+
+<h1 class="major">DIY RF Current Probe</h1>
+<h2>Split-Core Ferrite Probe for EMC Debugging</h2>
+
+<p>
+A compact and practical <strong>RF current probe</strong> designed for 
+<strong>pre-compliance EMC measurements</strong>.
+</p>
+
+<span class="image_fit" style="display:block; text-align:center;">
+    <img src="images/RFProbe.png" alt="RF Current Probe" />
+</span>
+
+<h3>WHY THIS DESIGN</h3>
+<div class="text-box">
+<p>
+- Split-core design (no need to disconnect cables)<br>
+- Fully parametric OpenSCAD model<br>
+- Easy to 3D print<br>
+- Compact and robust construction
+</p>
+</div>
+
+<h3>DIY OR READY-MADE</h3>
+<div class="text-box">
+<p>
+You can build this probe yourself using the OpenSCAD code below.
+<br><br>
+Prefer a ready-to-use version?
+<br>
+A <strong>calibrated probe</strong> is available for 
+<strong>€49 (excl. VAT)</strong>.
+<br><br>
+👉 Order via email:
+<a href="mailto:t.emc.compass@gmail.com">
+t.emc.compass@gmail.com
+</a>
+</p>
+</div>
+
+<h3>TECHNICAL OVERVIEW</h3>
+<table>
+<tbody>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Core Type</td>
+<td>Split Ferrite Core</td>
+</tr>
+<tr>
+<td>Construction</td>
+<td>3D Printed Housing</td>
+</tr>
+<tr>
+<td>Connector</td>
+<td>SMA</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>EMC Pre-compliance Debugging</td>
+</tr>
+<tr>
+<td>Use Case</td>
+<td>Cable Current Measurement</td>
+</tr>
+</tbody>
+</table>
+
+<h3>OPENSCAD CODE</h3>
+
+<div class="code-block">
+<pre><code>
+////////////////////////////////////////////////////////////
+// SPLIT CORE FERRITE HOUSING 
+// - correct hinge alignment
+// - real cable feedthrough
+// - true full-moon split
+////////////////////////////////////////////////////////////
+
+$fn = 120;
+
+// ---------------- CORE ----------------
+core_od = 26.9;
+core_id = 16.4;
+core_h  = 30;
+
+clear = 0.4;
+wall  = 2.5;
+
+cav_od = core_od + 2*clear;
+cav_id = core_id - 2*clear;
+
+height = core_h + (2*clear)+5;
+
+// outer
+outer_od = cav_od + 2*wall;
+
+// ---------------- HINGE ----------------
+hinge_pin_d = 3.2;
+hinge_lug_w = 6;
+hinge_lug_h = 6;
+
+// ---------------- CABLE ----------------
+wire_d = 1.0;
+wire_clear = 0.5;
+wire_hole_d = wire_d + wire_clear;
+
+// ---------------- MODE ----------------
+// 0 = assembly
+// 1 = half A
+// 2 = half B
+part = 0;
+
+
+sma_x = outer_od/2;
+sma_y = 0;
+sma_z = height/2;
+
+
+// ============================================================
+// FULL RING (base geometry)
+// ============================================================
+module full_ring()
+{
+    difference()
+    {
+        // outer
+        cylinder(h=height, r=outer_od/2);
+
+        // ferrite cavity (true torus cut)
+        translate([0,0,2.5])
+            cylinder(h=height-5, r=cav_od/2);
+
+        translate([0,0,-1])
+            cylinder(h=height+2, r=cav_id/2);
+
+        // central cable feedthrough 
+        translate([0,0,0])
+            cylinder(h=height+2, r=wire_hole_d/2);
+    }
+}
+
+
+// ============================================================
+// HALF CUT (true moon split)
+// ============================================================
+module half(body=true)
+{
+    intersection()
+    {
+        full_ring();
+
+        // cut plane (exact moon split)
+        translate([-outer_od, -outer_od/2, -1])
+            cube([outer_od, outer_od, height+2]);
+    }
+}
+
+
+// ============================================================
+// HINGE LUGS (aligned to split plane)
+// ============================================================
+
+
+module rounded_lug_2d(w, h, r)
+{
+    hull()
+    {
+        translate([-w/2 + r, -h/3])
+            circle(r=r);
+
+        translate([-w/2 + r, h/2])
+            circle(r=r);
+
+        translate([w/2, -h/2])
+            square([0.01, h]);
+    }
+}
+
+
+
+
+module hinge_lugs(side=1)
+{
+    lug_w = hinge_lug_w+3;
+    lug_h = hinge_lug_h+2 ;
+    fillet_r = 2;
+
+    translate([-1.7, side*((outer_od/2)+4.8), height/4])
+    difference()
+    {
+        union() {
+    // Block1
+    translate([0, 0, 0])
+        linear_extrude(height = height/4, center=false)
+            rounded_lug_2d(lug_w, lug_h, fillet_r);
+
+    // block 2)
+    translate([0, 0, height/2])
+        linear_extrude(height = height/4-2, center=false)
+            rounded_lug_2d(lug_w, lug_h, fillet_r);
+}
+
+        // hinge hole
+        translate([lug_w/3 - fillet_r*0.6, -1, 0])
+            rotate([180,0,0])
+                cylinder(h=lug_h*10, r=hinge_pin_d/2, center=true);
+    }
+}
+
+
+// ============================================================
+// SMA HOLE 
+// ============================================================
+module sma_hole()
+{
+    translate([sma_x+15, sma_y, sma_z])
+        rotate([0,90,0])
+            cylinder(h=outer_od*2, r=6.5/2, center=true);
+}
+
+module sma_support_block()
+{
+    translate([
+        outer_od*2-11,   
+        0,
+        height/2
+    ])
+    cube([6, 13, 13], center=true);
+}
+
+
+// ============================================================
+// HALF SHELL A
+// ============================================================
+module half_A()
+{
+    difference()
+    {
+        union()
+        {
+            half();
+            sma_support_block();
+            //sma_hole();
+        }
+
+        sma_hole();
+    }
+
+     mirror([0,1,0])hinge_lugs(-1);
+}
+
+
+// ============================================================
+// HALF SHELL B
+// ============================================================
+module half_B()
+{
+    difference()
+    {
+        rotate([0,0,180]) half();
+        sma_hole();
+       
+    }
+    
+   mirror([1,0,0])hinge_lugs(-1);
+}
+
+
+// ============================================================
+// ASSEMBLY VIEW
+// ============================================================
+module assembly()
+{
+    color("silver") half_A();
+
+    translate([outer_od + 5, 0, 0])
+        color("gainsboro") half_B();
+}
+
+
+// ============================================================
+// OUTPUT
+// ============================================================
+if (part == 0) assembly();
+if (part == 1) half_A();
+if (part == 2) half_B();
+</code></pre>
+</div>
+
+<h3>APPLICATION</h3>
+<div class="text-box">
+<p>
+Ideal for:
+<br>
+- Conducted emissions debugging<br>
+- Cable current measurements<br>
+- Fast EMC troubleshooting setups
+</p>
+
+</div>
+</section>
+
+</div>
+
+<footer id="footer" class="wrapper alt">
+<div class="inner">
+<ul class="menu">
+<li>&copy; T-EMCompass. All rights reserved.</li>
+<li>Design: HTML5 UP</li>
+</ul>
+</div>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
