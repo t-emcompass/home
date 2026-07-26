@@ -1,159 +1,327 @@
 <!DOCTYPE HTML>
 <!--
-	T-EMCompass by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	T-EMCompass | DC DebugLISN V1 Product Page
+	Based on Hyperspace by HTML5 UP | html5up.net | @ajlkn
+	CCA 3.0 license (html5up.net/license)
 -->
-<html>
-	<head>
-		<title>DCdebugLISN - T-EMCompass by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<html lang="en">
+<head>
+	<title>DC DebugLISN V1 &mdash; Pre-Compliance DC LISN | T-EMCompass</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="The T-EMCompass DC DebugLISN V1 is a compact 5 µH pre-compliance LISN for conducted emission debugging on DC power lines, 150 kHz to 200 MHz, up to 60 V / 10 A." />
+	<meta name="keywords" content="LISN, DC LISN, DebugLISN, conducted emissions, pre-compliance, EMC debugging, power line, 5uH, T-EMCompass" />
+	<meta name="author" content="T-EMCompass" />
+	<meta property="og:title" content="DC DebugLISN V1 &mdash; Pre-Compliance DC LISN | T-EMCompass" />
+	<meta property="og:description" content="Compact 5 µH pre-compliance LISN for conducted emission debugging on DC power lines, 150 kHz to 200 MHz." />
+	<meta property="og:type" content="website" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		/* ============================================================
+		   T-EMCompass — Product Page Shared Styles
+		   ============================================================ */
+		:root {
+			--ac:      #2563eb;
+			--ac-dark: #1d4ed8;
+			--ac-light:#eff6ff;
+			--ac-bdr:  #bfdbfe;
+			--tx:      #1a1a1a;
+			--mu:      #6b7280;
+			--bdr:     #e5e7eb;
+			--bg:      #f9fafb;
+		}
 
-		<style>
-		  /* Make all text in main section black */
-		  #main {
-		    color: #000;
-		  }
+		#main { color: var(--tx); }
 
-		  /* Center the images inside paragraphs */
-		  #main .inner p img {
-		    display: block;
-		    margin: 1.5em auto;
-		    max-width: 100%;
-		    height: auto;
-		  }
+		#main h3 {
+			text-align: left;
+			font-size: 0.72em;
+			font-weight: 700;
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			color: var(--ac);
+			margin: 2.8em 0 1em;
+			padding-bottom: 0.55em;
+			border-bottom: 1px solid var(--bdr);
+		}
 
-		  /* Style the technical data table */
-		  #main table {
-		    margin: 2em auto;
-		    border-collapse: collapse;
-		    width: 80%;
-		    max-width: 600px;
-		    background: #fff;
-		    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		    color: #000;
-		  }
+		.product-subtitle {
+			display: inline-block;
+			background: var(--ac-light);
+			color: var(--ac);
+			font-weight: 600;
+			font-size: 0.88em;
+			padding: 0.35em 1.1em;
+			border-radius: 2em;
+			border: 1px solid var(--ac-bdr);
+			margin-bottom: 1.8em;
+			letter-spacing: 0.02em;
+		}
 
-		  #main table th, #main table td {
-		    border: 1px solid #ddd;
-		    padding: 0.75em 1em;
-		    text-align: left;
-			color: #000;
-		  }
+		.intro-box {
+			background: var(--bg);
+			border-left: 4px solid var(--ac);
+			padding: 1.5em 1.8em;
+			border-radius: 0 8px 8px 0;
+			margin: 0 0 2.5em;
+			line-height: 1.85;
+		}
+		.intro-box p { margin-bottom: 0.9em; }
+		.intro-box p:last-child { margin-bottom: 0; }
+		.intro-box strong { color: var(--ac-dark); }
 
-		  #main table th {
-		    background-color: #f2f2f2;
-		    font-weight: 600;
-		  }
+		.benefits-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 1em;
+			margin: 0 0 2em;
+		}
+		.benefit-card {
+			background: #fff;
+			border: 1px solid var(--bdr);
+			border-radius: 8px;
+			padding: 1.2em 1.4em;
+			transition: box-shadow 0.2s;
+		}
+		.benefit-card:hover { box-shadow: 0 4px 18px rgba(37,99,235,0.10); }
+		.benefit-card .bc-icon { font-size: 1.4em; margin-bottom: 0.5em; display: block; }
+		.benefit-card h4 { margin: 0 0 0.3em; font-size: 0.9em; font-weight: 700; color: var(--tx); }
+		.benefit-card p  { margin: 0; font-size: 0.83em; color: var(--mu); line-height: 1.6; }
 
-		  /* Alternate row coloring */
-		  #main table tbody tr:nth-child(odd) {
-		    background-color: #fafafa;
-		  }
+		.tag-list { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0.5em 0 2em; }
+		.tag {
+			display: inline-block;
+			background: var(--ac-light);
+			color: var(--ac);
+			font-size: 0.78em;
+			font-weight: 600;
+			padding: 0.3em 0.9em;
+			border-radius: 2em;
+			border: 1px solid var(--ac-bdr);
+			letter-spacing: 0.04em;
+		}
 
-		  /* Center align all h3 titles inside main */
-		  #main h3 {
-		    text-align: center;
-		  }
-		</style>
-	</head>
-	<body class="is-preload">
+		#main table {
+			margin: 0 auto 2em;
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 640px;
+			background: #fff;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+			font-size: 0.95em;
+			color: var(--tx);
+		}
+		#main table th,
+		#main table td {
+			border: none;
+			border-bottom: 1px solid var(--bdr);
+			padding: 0.9em 1.2em;
+			text-align: left;
+			color: var(--tx);
+		}
+		#main table tr:last-child td { border-bottom: none; }
+		#main table th {
+			background: var(--ac);
+			color: #fff;
+			font-weight: 600;
+			font-size: 0.84em;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+		}
+		#main table tbody tr:hover { background: var(--ac-light); }
 
-		<!-- Header -->
-		<header id="header">
-			<a href="index.html" class="title">T-EMCompass</a>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-				</ul>
-			</nav>
-		</header>
+		.spec-note {
+			font-size: 0.84em;
+			color: var(--mu);
+			text-align: center;
+			margin-bottom: 1.2em;
+			font-style: italic;
+		}
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+		#main .inner p img,
+		#main .inner .img-center img {
+			display: block;
+			margin: 1.2em auto 1.8em;
+			max-width: 100%;
+			height: auto;
+			border-radius: 6px;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+		}
 
-			<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<h1 class="major">DCdebugLISN V1</h1>
-					<h2>Precompliance DC 5µH LISN</h2>
-					<p><strong>MODEL: AAN FOR (1/2/3 OR 4) UNSHIELDED PAIRS</strong></p>
-					
-					<span class="image_fit" style="display:block; text-align:center;"><img src="images/DebugLISN.png" alt="" /></span>
+		.cta-box {
+			background: linear-gradient(135deg, var(--ac) 0%, var(--ac-dark) 100%);
+			color: #fff;
+			border-radius: 10px;
+			padding: 2em 2.5em;
+			margin: 3em 0 1em;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1.5em;
+			flex-wrap: wrap;
+		}
+		.cta-box .cta-text h3 {
+			color: #fff !important;
+			border: none !important;
+			margin: 0 0 0.3em !important;
+			font-size: 1.05em !important;
+			text-transform: none !important;
+			letter-spacing: normal !important;
+			padding: 0 !important;
+		}
+		.cta-box .cta-text p { margin: 0; opacity: 0.88; font-size: 0.9em; }
+		.cta-box a.btn-cta {
+			display: inline-block;
+			background: #fff;
+			color: var(--ac);
+			font-weight: 700;
+			padding: 0.8em 1.8em;
+			border-radius: 6px;
+			text-decoration: none;
+			font-size: 0.9em;
+			white-space: nowrap;
+			flex-shrink: 0;
+			transition: transform 0.15s, box-shadow 0.15s;
+		}
+		.cta-box a.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+	</style>
+</head>
 
-					
-					
-					<h3>TECHNICAL DATA</h3>
-					<table>
-					  <tbody>
-						<tr>
-						  <th>Parameter</th>
-						  <th>Value</th>
-						</tr>
-						<tr>
-						  <td>Frequency Range</td>
-						  <td>150 kHz – 200 MHz</td>
-						</tr>
-						<tr>
-						  <td>Transducer</td>
-						  <td>+/- -10dB</td>
-						</tr>
-						<tr>
-						  <td>EuT, AE Terminals</td>
-						  <td>RisingCage pluggable terminal blocks</td>
-						</tr>
-						<tr>
-						  <td>Measuring Port</td>
-						  <td>50Ω BNC</td>
-						</tr>
-						<tr>
-						  <td>Max. Voltage</td>
-						  <td>60V DC</td>
-						</tr>
-						<tr>
-						  <td>Max. Current</td>
-						  <td>10A</td>
-						</tr>
-						<tr>
-						  <td>Operating Temperature</td>
-						  <td>+10 °C to +35 °C</td>
-						</tr>
-					  </tbody>
-					</table>
+<body class="is-preload">
 
+	<header id="header">
+		<a href="index.html" class="title">T-EMCompass</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html#two">Products</a></li>
+			</ul>
+		</nav>
+	</header>
 
-					<h3>TYPICAL IMPEDANCE</h3>
-					<p><class="image_fit" style="display:block; text-align:center;"><img src="images/ImpedanceDebugLISNV1.png" alt="Typical Impedance" /></p>
-
-					<h3>TYPICAL VOLTAGE DIVISION FACTOR (VDF)</h3>
-					<p><class="image_fit" style="display:block; text-align:center;"><img src="images/VDFDebugLISNV1.png" alt="Typical Voltage Division Factor (VDF)" /></p>
-				</div>
-			</section>
-
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer" class="wrapper alt">
+	<div id="wrapper">
+		<section id="main" class="wrapper">
 			<div class="inner">
-				<ul class="menu">
-					<li>&copy; Untitled. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
+
+				<h1 class="major">DC DebugLISN V1</h1>
+				<span class="product-subtitle">Pre-Compliance 5&nbsp;&micro;H Line Impedance Stabilisation Network &middot; DC Power Lines</span>
+
+				<div class="img-center">
+					<img src="images/DebugLISN.png" alt="DC DebugLISN V1 &mdash; compact pre-compliance LISN for DC conducted emission debugging" />
+				</div>
+				<h3>About this product</h3>
+				<div class="intro-box">
+					<p>
+						The <strong>DC DebugLISN V1</strong> is a compact and affordable
+						<strong>Line Impedance Stabilisation Network (LISN)</strong>, specifically designed for
+						<strong>conducted emission debugging on DC power lines</strong>.
+					</p>
+					<p>
+						A LISN provides a defined impedance between the DC supply and the Equipment under Test (EuT),
+						isolating the EuT from disturbances present on the supply line and creating a stable,
+						reproducible <strong>50&nbsp;&Omega; measurement port</strong>. This enables reliable
+						measurement and comparison of conducted emissions across different test setups, even without
+						access to a full EMC laboratory.
+					</p>
+					<p>
+						What makes this LISN especially powerful is its ability to switch between
+						<strong>common mode</strong>, <strong>differential mode</strong>, and the individual
+						<strong>positive</strong> and <strong>negative</strong> lines. This creates a practical way
+						to localise the dominant noise path, simplify debugging, and select the most effective
+						filtering components.
+					</p>
+					<p>
+						The DC DebugLISN V1 is intended for <strong>pre-compliance work</strong>: fast, repeatable
+						measurements during the development phase to identify and solve emission issues before
+						entering costly formal EMC testing. The tool-free spring-cage terminal blocks allow quick
+						cable connection, while the BNC measurement port connects directly to a spectrum analyser or
+						EMI receiver.
+					</p>
+					<p>
+						With a maximum rating of <strong>10&nbsp;A</strong> and up to <strong>60&nbsp;V&nbsp;DC</strong>,
+						it is suitable for a wide range of DC-powered embedded systems, industrial controllers, and
+						automotive sub-systems.
+					</p>
+				</div>
+
+
+				<h3>Key features</h3>
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<span class="bc-icon">&#9889;</span>
+						<h4>Wide Frequency Range</h4>
+						<p>150&nbsp;kHz &ndash; 200&nbsp;MHz &mdash; covers the full conducted emission band and well into the radiated range.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128268;</span>
+						<h4>Tool-Free Connectivity</h4>
+						<p>Rising-cage pluggable terminal blocks for fast, reliable cable connection without screwdrivers or crimps.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128207;</span>
+						<h4>Fast switching between CM/DM/+/-</h4>
+						<p>ability to switch between common mode, differential mode, and the individual positive and negative lines.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128170;</span>
+						<h4>10&nbsp;A / 60&nbsp;V Rated</h4>
+						<p>Handles a wide range of DC-powered systems: embedded, industrial and low-voltage automotive applications.</p>
+					</div>
+				</div>
+
+				
+				<h3>Technical specifications</h3>
+				<p class="spec-note">All values measured at room temperature (+23&nbsp;&deg;C) unless stated otherwise.</p>
+				<table>
+					<tbody>
+						<tr><th>Parameter</th><th>Value</th></tr>
+						<tr><td>Frequency Range</td><td>150&nbsp;kHz &ndash; 200&nbsp;MHz</td></tr>
+						<tr><td>Inductance (nominal)</td><td>5&nbsp;&micro;H</td></tr>
+						<tr><td>Transducer Insertion Loss</td><td>&minus;10&nbsp;dB &plusmn; 1&nbsp;dB</td></tr>
+						<tr><td>EuT / AE Terminals</td><td>Rising-cage pluggable terminal blocks</td></tr>
+						<tr><td>Measuring Port</td><td>50&nbsp;&Omega; BNC (female)</td></tr>
+						<tr><td>Max. Voltage</td><td>60&nbsp;V DC</td></tr>
+						<tr><td>Max. Current</td><td>10&nbsp;A</td></tr>
+						<tr><td>Operating Temperature</td><td>+10&nbsp;&deg;C to +35&nbsp;&deg;C</td></tr>
+					</tbody>
+				</table>
+
+				<h3>Typical impedance</h3>
+				<p><img src="images/ImpedanceDebugLISNV1.png" alt="Typical impedance of the DC DebugLISN V1 &mdash; 150 kHz to 200 MHz" /></p>
+
+				<h3>Typical voltage division factor (VDF)</h3>
+				<p><img src="images/VDFDebugLISNV1.png" alt="Typical VDF of the DC DebugLISN V1 &mdash; 150 kHz to 200 MHz" /></p>
+
+				<div class="cta-box">
+					<div class="cta-text">
+						<h3>Interested in the DC DebugLISN V1?</h3>
+						<p>Contact us for pricing, lead time, or any technical questions.</p>
+					</div>
+					<a href="index.html#three" class="btn-cta">Get in touch &rarr;</a>
+				</div>
+
 			</div>
-		</footer>
+		</section>
+	</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; 2025 T-EMCompass. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
 
-	</body>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<!--
+	T-EMCompass | EMI Map Generator Product Page
+	Based on Hyperspace by HTML5 UP | html5up.net | @ajlkn
+	CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+	<title>EMI Map Generator &mdash; EMI Heatmap Software | T-EMCompass</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="The T-EMCompass EMI Map Generator creates visual EMI heatmaps using a near-field probe and webcam, compatible with Rohde &amp; Schwarz FPL, Siglent SSA3000X, and RIGOL DSA spectrum analysers." />
+	<meta name="keywords" content="EMI map generator, EMI heatmap, near-field scanning, spectrum analyser, Rohde Schwarz, Siglent, RIGOL, EMC debugging, T-EMCompass" />
+	<meta name="author" content="T-EMCompass" />
+	<meta property="og:title" content="EMI Map Generator &mdash; EMI Heatmap Software | T-EMCompass" />
+	<meta property="og:description" content="Create visual EMI heatmaps with any near-field probe and standard webcam. Compatible with R&amp;S FPL, Siglent SSA3000X and RIGOL DSA series." />
+	<meta property="og:type" content="website" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		/* ============================================================
+		   T-EMCompass &mdash; Product Page Shared Styles
+		   ============================================================ */
+		:root {
+			--ac:      #2563eb;
+			--ac-dark: #1d4ed8;
+			--ac-light:#eff6ff;
+			--ac-bdr:  #bfdbfe;
+			--tx:      #1a1a1a;
+			--mu:      #6b7280;
+			--bdr:     #e5e7eb;
+			--bg:      #f9fafb;
+		}
+
+		#main { color: var(--tx); }
+
+		/* Section label headers */
+		#main h3 {
+			text-align: left;
+			font-size: 0.72em;
+			font-weight: 700;
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			color: var(--ac);
+			margin: 2.8em 0 1em;
+			padding-bottom: 0.55em;
+			border-bottom: 1px solid var(--bdr);
+		}
+
+		/* Product subtitle pill */
+		.product-subtitle {
+			display: inline-block;
+			background: var(--ac-light);
+			color: var(--ac);
+			font-weight: 600;
+			font-size: 0.88em;
+			padding: 0.35em 1.1em;
+			border-radius: 2em;
+			border: 1px solid var(--ac-bdr);
+			margin-bottom: 1.8em;
+			letter-spacing: 0.02em;
+		}
+
+		/* Description / intro box */
+		.intro-box {
+			background: var(--bg);
+			border-left: 4px solid var(--ac);
+			padding: 1.5em 1.8em;
+			border-radius: 0 8px 8px 0;
+			margin: 0 0 2.5em;
+			line-height: 1.85;
+		}
+		.intro-box p { margin-bottom: 0.9em; }
+		.intro-box p:last-child { margin-bottom: 0; }
+		.intro-box strong { color: var(--ac-dark); }
+
+		/* Key benefits grid */
+		.benefits-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 1em;
+			margin: 0 0 2em;
+		}
+		.benefit-card {
+			background: #fff;
+			border: 1px solid var(--bdr);
+			border-radius: 8px;
+			padding: 1.2em 1.4em;
+			transition: box-shadow 0.2s;
+		}
+		.benefit-card:hover { box-shadow: 0 4px 18px rgba(37,99,235,0.10); }
+		.benefit-card .bc-icon { font-size: 1.4em; margin-bottom: 0.5em; display: block; }
+		.benefit-card h4 { margin: 0 0 0.3em; font-size: 0.9em; font-weight: 700; color: var(--tx); }
+		.benefit-card p  { margin: 0; font-size: 0.83em; color: var(--mu); line-height: 1.6; }
+
+		/* Spec table */
+		#main table {
+			margin: 0 auto 2em;
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 640px;
+			background: #fff;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+			font-size: 0.95em;
+			color: var(--tx);
+		}
+		#main table th,
+		#main table td {
+			border: none;
+			border-bottom: 1px solid var(--bdr);
+			padding: 0.9em 1.2em;
+			text-align: left;
+			color: var(--tx);
+		}
+		#main table tr:last-child td { border-bottom: none; }
+		#main table th {
+			background: var(--ac);
+			color: #fff;
+			font-weight: 600;
+			font-size: 0.84em;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+		}
+		#main table tbody tr:hover { background: var(--ac-light); }
+
+		/* Images */
+		#main .inner p img {
+			display: block;
+			margin: 1.2em auto 1.8em;
+			max-width: 100%;
+			height: auto;
+			border-radius: 6px;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+		}
+
+		/* CTA box */
+		.cta-box {
+			background: linear-gradient(135deg, var(--ac) 0%, var(--ac-dark) 100%);
+			color: #fff;
+			border-radius: 10px;
+			padding: 2em 2.5em;
+			margin: 3em 0 1em;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1.5em;
+			flex-wrap: wrap;
+		}
+		.cta-box .cta-text h3 {
+			color: #fff !important;
+			border: none !important;
+			margin: 0 0 0.3em !important;
+			font-size: 1.05em !important;
+			text-transform: none !important;
+			letter-spacing: normal !important;
+			padding: 0 !important;
+		}
+		.cta-box .cta-text p { margin: 0; opacity: 0.88; font-size: 0.9em; }
+		.cta-box a.btn-cta {
+			display: inline-block;
+			background: #fff;
+			color: var(--ac);
+			font-weight: 700;
+			padding: 0.8em 1.8em;
+			border-radius: 6px;
+			text-decoration: none;
+			font-size: 0.9em;
+			white-space: nowrap;
+			flex-shrink: 0;
+			transition: transform 0.15s, box-shadow 0.15s;
+		}
+		.cta-box a.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+
+		/* ---- Pricing cards ---- */
+		.pricing-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			gap: 1.2em;
+			margin: 0 0 1em;
+		}
+		.price-card {
+			background: #fff;
+			border: 1.5px solid var(--bdr);
+			border-radius: 10px;
+			padding: 1.8em 1.6em;
+			text-align: center;
+		}
+		.price-card.featured {
+			border-color: var(--ac);
+			box-shadow: 0 4px 20px rgba(37,99,235,0.12);
+		}
+		.price-card .price-label {
+			font-size: 0.76em;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--mu);
+			margin-bottom: 0.6em;
+		}
+		.price-card .price-amount {
+			font-size: 2.2em;
+			font-weight: 800;
+			color: var(--ac);
+			line-height: 1;
+		}
+		.price-card .price-excl {
+			font-size: 0.76em;
+			color: var(--mu);
+			display: block;
+			margin-top: 0.25em;
+		}
+		.price-card .price-desc {
+			font-size: 0.83em;
+			color: var(--mu);
+			margin-top: 0.9em;
+			line-height: 1.6;
+		}
+		.price-note {
+			font-size: 0.83em;
+			color: var(--mu);
+			text-align: center;
+			font-style: italic;
+			margin: 0.5em 0 2em;
+		}
+
+		/* ---- Demo video embed ---- */
+		.video-wrapper {
+			position: relative;
+			padding-bottom: 56.25%;
+			height: 0;
+			overflow: hidden;
+			border-radius: 8px;
+			margin: 0.5em 0 2.5em;
+			background: #000;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+		}
+		.video-wrapper iframe {
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%; height: 100%;
+			border: 0;
+		}
+	</style>
+</head>
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">T-EMCompass</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html#two">Products</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="wrapper">
+		<section id="main" class="wrapper">
+			<div class="inner">
+
+				<h1 class="major">EMI Map Generator</h1>
+				<span class="product-subtitle">EMI Heatmap Software &middot; Near-Field Scanning &middot; Multi-Analyser</span>
+
+				<span class="image fit">
+					<!-- Replace with your actual product image -->
+					<img src="images/Heatmap.png" alt="EMI Map Generator &mdash; EMI heatmap software for near-field scanning" />
+				</span>
+
+				<h3>About this product</h3>
+				<div class="intro-box">
+					<p>
+						The <strong>EMI Map Generator</strong> is a practical software tool that turns your existing
+						near-field probe and spectrum analyser into a fully functional <strong>EMI heatmap scanner</strong>.
+						Using a standard USB webcam as a position reference, it overlays measured electromagnetic emission
+						data directly onto an image of your PCB or device under test.
+					</p>
+					<p>
+						The result is a clear, colour-coded <strong>heatmap</strong> that immediately reveals the
+						dominant emission sources on your board &mdash; no dedicated XY scanner or specialist hardware required.
+						Designed to be accessible for any engineer who already has a spectrum analyser and a near-field probe set.
+					</p>
+					<p>
+						The software supports the <strong>Rohde &amp; Schwarz FPL series</strong>,
+						<strong>Siglent Technologies SSA3000X series</strong>, and <strong>RIGOL Technologies DSA series</strong>
+						spectrum analysers, and works with <strong>any standard near-field probe</strong>.
+					</p>
+				</div>
+
+				<h3>Key features</h3>
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<span class="bc-icon">&#127757;</span>
+						<h4>Visual EMI Heatmaps</h4>
+						<p>Overlay measured emission data onto a webcam image of your PCB for immediate, intuitive identification of noise sources.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128268;</span>
+						<h4>Multi-Analyser Support</h4>
+						<p>Works out of the box with Rohde &amp; Schwarz FPL, Siglent SSA3000X, and RIGOL DSA series spectrum analysers.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128247;</span>
+						<h4>Standard USB Webcam</h4>
+						<p>No XY stage or specialist camera required &mdash; any standard USB webcam serves as the position reference for the scan.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128202;</span>
+						<h4>Any Near-Field Probe</h4>
+						<p>Compatible with any standard near-field probe set, so you can start immediately with equipment you already own.</p>
+					</div>
+				</div>
+
+				<h3>Supported hardware</h3>
+				<table>
+					<tbody>
+						<tr><th>Type</th><th>Supported Models</th></tr>
+						<tr><td>Spectrum Analyser</td><td>Rohde &amp; Schwarz FPL series</td></tr>
+						<tr><td>Spectrum Analyser</td><td>Siglent Technologies SSA3000X series</td></tr>
+						<tr><td>Spectrum Analyser</td><td>RIGOL Technologies DSA series</td></tr>
+						<tr><td>Near-Field Probe</td><td>Any standard near-field probe</td></tr>
+						<tr><td>Camera</td><td>Any standard USB webcam</td></tr>
+					</tbody>
+				</table>
+
+				<h3>Demo</h3>
+				<!-- Replace VIDEO_ID_HERE with your actual YouTube video ID, e.g. src="https://www.youtube.com/embed/dQw4w9WgXcQ" -->
+				<div class="video-wrapper">
+					<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7481358827045519360?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Ingevoegde bijdrage"></iframe>
+				</div>
+
+				<h3>Pricing</h3>
+				<div class="pricing-grid">
+					<div class="price-card">
+						<div class="price-label">1-Year License</div>
+						<div class="price-amount">&euro;149</div>
+						<span class="price-excl">excl. tax &mdash; per year</span>
+						<div class="price-desc">Annual license. Renew each year to keep access to software updates and new analyser support.</div>
+					</div>
+					<div class="price-card featured">
+						<div class="price-label">One-Time License</div>
+						<div class="price-amount">&euro;499</div>
+						<span class="price-excl">excl. tax &mdash; one time</span>
+						<div class="price-desc">Perpetual license. Pay once and use the software indefinitely, including all future updates.</div>
+					</div>
+				</div>
+				<p class="price-note">&#128274;&nbsp; License is tied to your hardware serial number. Contact us to request your personal license key.</p>
+
+				<div class="cta-box">
+					<div class="cta-text">
+						<h3>Interested in the EMI Map Generator?</h3>
+						<p>Contact us to purchase a license, request a demo, or ask any technical questions.</p>
+					</div>
+					<a href="index.html#three" class="btn-cta">Get in touch &rarr;</a>
+				</div>
+
+			</div>
+		</section>
+	</div>
+
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; 2025 T-EMCompass. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>

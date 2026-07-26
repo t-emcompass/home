@@ -1,164 +1,321 @@
 <!DOCTYPE HTML>
 <!--
-	T-EMCompass by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	T-EMCompass | AAN T8 Product Page
+	Based on Hyperspace by HTML5 UP | html5up.net | @ajlkn
+	CCA 3.0 license (html5up.net/license)
 -->
-<html>
-	<head>
-		<title>AAN T8 - T-EMCompass by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<html lang="en">
+<head>
+	<title>AAN T8 &mdash; Asymmetric Artificial Network | T-EMCompass</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="The T-EMCompass AAN T8 is a purpose-built Asymmetric Artificial Network (ISN) for conducted emission measurements on RJ45 unshielded cables, 150 kHz &ndash; 30 MHz, per IEC 62153-4-6." />
+	<meta name="keywords" content="AAN, asymmetric artificial network, ISN, RJ45, conducted emissions, EMC, IEC 62153-4-6, unshielded pairs, T-EMCompass" />
+	<meta name="author" content="T-EMCompass" />
+	<meta property="og:title" content="AAN T8 &mdash; Asymmetric Artificial Network | T-EMCompass" />
+	<meta property="og:description" content="Purpose-built ISN for conducted emission measurements on RJ45 unshielded cables, 150 kHz &ndash; 30 MHz." />
+	<meta property="og:type" content="website" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		/* ============================================================
+		   T-EMCompass &mdash; Product Page Shared Styles
+		   ============================================================ */
+		:root {
+			--ac:      #2563eb;
+			--ac-dark: #1d4ed8;
+			--ac-light:#eff6ff;
+			--ac-bdr:  #bfdbfe;
+			--tx:      #1a1a1a;
+			--mu:      #6b7280;
+			--bdr:     #e5e7eb;
+			--bg:      #f9fafb;
+		}
 
-		<style>
-		  /* Make all text in main section black */
-		  #main {
-		    color: #000;
-		  }
+		#main { color: var(--tx); }
 
-		  /* Center the images inside paragraphs */
-		  #main .inner p img {
-		    display: block;
-		    margin: 1.5em auto;
-		    max-width: 100%;
-		    height: auto;
-		  }
+		/* Section label headers */
+		#main h3 {
+			text-align: left;
+			font-size: 0.72em;
+			font-weight: 700;
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			color: var(--ac);
+			margin: 2.8em 0 1em;
+			padding-bottom: 0.55em;
+			border-bottom: 1px solid var(--bdr);
+		}
 
-		  /* Style the technical data table */
-		  #main table {
-		    margin: 2em auto;
-		    border-collapse: collapse;
-		    width: 80%;
-		    max-width: 600px;
-		    background: #fff;
-		    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		    color: #000;
-		  }
+		/* Product subtitle pill */
+		.product-subtitle {
+			display: inline-block;
+			background: var(--ac-light);
+			color: var(--ac);
+			font-weight: 600;
+			font-size: 0.88em;
+			padding: 0.35em 1.1em;
+			border-radius: 2em;
+			border: 1px solid var(--ac-bdr);
+			margin-bottom: 1.8em;
+			letter-spacing: 0.02em;
+		}
 
-		  #main table th, #main table td {
-		    border: 1px solid #ddd;
-		    padding: 0.75em 1em;
-		    text-align: left;
-			color: #000;
-		  }
+		/* Description / intro box */
+		.intro-box {
+			background: var(--bg);
+			border-left: 4px solid var(--ac);
+			padding: 1.5em 1.8em;
+			border-radius: 0 8px 8px 0;
+			margin: 0 0 2.5em;
+			line-height: 1.85;
+		}
+		.intro-box p { margin-bottom: 0.9em; }
+		.intro-box p:last-child { margin-bottom: 0; }
+		.intro-box strong { color: var(--ac-dark); }
 
-		  #main table th {
-		    background-color: #f2f2f2;
-		    font-weight: 600;
-		  }
+		/* Key benefits grid */
+		.benefits-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 1em;
+			margin: 0 0 2em;
+		}
+		.benefit-card {
+			background: #fff;
+			border: 1px solid var(--bdr);
+			border-radius: 8px;
+			padding: 1.2em 1.4em;
+			transition: box-shadow 0.2s;
+		}
+		.benefit-card:hover { box-shadow: 0 4px 18px rgba(37,99,235,0.10); }
+		.benefit-card .bc-icon { font-size: 1.4em; margin-bottom: 0.5em; display: block; }
+		.benefit-card h4 { margin: 0 0 0.3em; font-size: 0.9em; font-weight: 700; color: var(--tx); }
+		.benefit-card p  { margin: 0; font-size: 0.83em; color: var(--mu); line-height: 1.6; }
 
-		  /* Alternate row coloring */
-		  #main table tbody tr:nth-child(odd) {
-		    background-color: #fafafa;
-		  }
+		/* Standards tags */
+		.tag-list { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0.5em 0 2em; }
+		.tag {
+			display: inline-block;
+			background: var(--ac-light);
+			color: var(--ac);
+			font-size: 0.78em;
+			font-weight: 600;
+			padding: 0.3em 0.9em;
+			border-radius: 2em;
+			border: 1px solid var(--ac-bdr);
+			letter-spacing: 0.04em;
+		}
 
-		  /* Center align all h3 titles inside main */
-		  #main h3 {
-		    text-align: center;
-		  }
-		</style>
-	</head>
-	<body class="is-preload">
+		/* Spec table */
+		#main table {
+			margin: 0 auto 2em;
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 640px;
+			background: #fff;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+			font-size: 0.95em;
+			color: var(--tx);
+		}
+		#main table th,
+		#main table td {
+			border: none;
+			border-bottom: 1px solid var(--bdr);
+			padding: 0.9em 1.2em;
+			text-align: left;
+			color: var(--tx);
+		}
+		#main table tr:last-child td { border-bottom: none; }
+		#main table th {
+			background: var(--ac);
+			color: #fff;
+			font-weight: 600;
+			font-size: 0.84em;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+		}
+		#main table tbody tr:hover { background: var(--ac-light); }
 
-		<!-- Header -->
-		<header id="header">
-			<a href="index.html" class="title">T-EMCompass</a>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-				</ul>
-			</nav>
-		</header>
+		/* Spec note */
+		.spec-note {
+			font-size: 0.84em;
+			color: var(--mu);
+			text-align: center;
+			margin-bottom: 1.2em;
+			font-style: italic;
+		}
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+		/* Images */
+		#main .inner p img {
+			display: block;
+			margin: 1.2em auto 1.8em;
+			max-width: 100%;
+			height: auto;
+			border-radius: 6px;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+		}
 
-			<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<h1 class="major">ASYMMETRIC ARTIFICIAL NETWORKS (AAN) T8</h1>
-					<span class="image fit"><img src="images/AANT8.png" alt="" /></span>
+		/* CTA box */
+		.cta-box {
+			background: linear-gradient(135deg, var(--ac) 0%, var(--ac-dark) 100%);
+			color: #fff;
+			border-radius: 10px;
+			padding: 2em 2.5em;
+			margin: 3em 0 1em;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1.5em;
+			flex-wrap: wrap;
+		}
+		.cta-box .cta-text h3 {
+			color: #fff !important;
+			border: none !important;
+			margin: 0 0 0.3em !important;
+			font-size: 1.05em !important;
+			text-transform: none !important;
+			letter-spacing: normal !important;
+			padding: 0 !important;
+		}
+		.cta-box .cta-text p { margin: 0; opacity: 0.88; font-size: 0.9em; }
+		.cta-box a.btn-cta {
+			display: inline-block;
+			background: #fff;
+			color: var(--ac);
+			font-weight: 700;
+			padding: 0.8em 1.8em;
+			border-radius: 6px;
+			text-decoration: none;
+			font-size: 0.9em;
+			white-space: nowrap;
+			flex-shrink: 0;
+			transition: transform 0.15s, box-shadow 0.15s;
+		}
+		.cta-box a.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+	</style>
+</head>
 
-					<h2>ASYMMETRIC ARTIFICIAL NETWORKS (AAN)</h2>
-					<p><strong>MODEL: AAN FOR (1/2/3 OR 4) UNSHIELDED PAIRS</strong></p>
-					
-					<h3>TECHNICAL DATA</h3>
-					<table>
-					  <tbody>
-						<tr>
-						  <th>Parameter</th>
-						  <th>Value</th>
-						</tr>
-						<tr>
-						  <td>Frequency Range</td>
-						  <td>150 kHz - 30 MHz</td>
-						</tr>
-						<tr>
-						  <td>Impedance</td>
-						  <td>150 Ω ± 20 Ω</td>
-						</tr>
-						<tr>
-						  <td>Voltage Division Ratio (VDF)</td>
-						  <td>9.5 dB ± 1 dB</td>
-						</tr>
-						<tr>
-						  <td>EuT, AE Terminals</td>
-						  <td>RJ45 Terminals</td>
-						</tr>
-						<tr>
-						  <td>Measuring Port</td>
-						  <td>50Ω N-TYPE</td>
-						</tr>
-						<tr>
-						  <td>Max. Voltage</td>
-						  <td>60V DC</td>
-						</tr>
-						<tr>
-						  <td>Max. Current</td>
-						  <td>1A per pair</td>
-						</tr>
-						<tr>
-						  <td>Outer dimensions (W x H x D)</td>
-						  <td>(106 x 73.7 x 100 mm)</td>
-						</tr>
-						<tr>
-						  <td>Operating Temperature</td>
-						  <td>+10 °C to +35 °C</td>
-						</tr>
-					  </tbody>
-					</table>
+<body class="is-preload">
 
-					<h3>TYPICAL COMMON MODE IMPEDANCE</h3>
-					<p><img src="images/AANT8impedance.png" alt="Typical Common Mode Impedance" /></p>
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">T-EMCompass</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html#two">Products</a></li>
+			</ul>
+		</nav>
+	</header>
 
-					<h3>TYPICAL VOLTAGE DIVISION FACTOR (VDF)</h3>
-					<p><img src="images/AANT8vdf.png" alt="Typical Voltage Division Factor (VDF)" /></p>
-				</div>
-			</section>
-
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer" class="wrapper alt">
+	<div id="wrapper">
+		<section id="main" class="wrapper">
 			<div class="inner">
-				<ul class="menu">
-					<li>&copy; Untitled. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
+
+				<h1 class="major">AAN T8</h1>
+				<span class="product-subtitle">Asymmetric Artificial Network &mdash; Unshielded Twisted Pairs &middot; RJ45</span>
+
+				<span class="image fit">
+					<img src="images/AANT8.png" alt="AAN T8 &mdash; Asymmetric Artificial Network for RJ45 unshielded cables" />
+				</span>
+
+				<h3>About this product</h3>
+				<div class="intro-box">
+					<p>
+						The <strong>AAN T8</strong> is a purpose-built <strong>Asymmetric Artificial Network (AAN)</strong> &mdash;
+						standardised as an Impedance Stabilisation Network (ISN) &mdash; for conducted emission measurements on
+						<strong>unshielded twisted pair (UTP) cables with an RJ45 interface</strong>.
+					</p>
+					<p>
+						It establishes a defined, reproducible <strong>common-mode impedance of 150&nbsp;&Omega;</strong> at the
+						cable port of the Equipment under Test (EuT), enabling accurate and repeatable conducted emission
+						measurements. 
+					</p>
+					<p>
+						The T8 variant supports up to <strong>four unshielded pairs simultaneously</strong>, making it suitable
+						for both <strong>Fast Ethernet (100BASE-TX)</strong> and <strong>Gigabit Ethernet (1000BASE-T)</strong>
+						applications &mdash; covering the vast majority of modern UTP-based equipment in a single compact unit.
+					</p>
+				</div>
+
+				<h3>Key features</h3>
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<span class="bc-icon">&#9889;</span>
+						<h4>Stable 150&nbsp;&Omega; Common-Mode Impedance</h4>
+						<p>Defined, reproducible impedance across the full 150&nbsp;kHz &ndash; 30&nbsp;MHz range for consistent, comparable results.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128268;</span>
+						<h4>1 to 4 Pairs &mdash; Single Unit</h4>
+						<p>Covers 100BASE-TX (2 pairs) and 1000BASE-T (4 pairs) Ethernet in one device &mdash; no swapping between ISNs.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128207;</span>
+						<h4>50&nbsp;&Omega; N-Type Measurement Port</h4>
+						<p>A strong N-type connection to connect any spectrum analyser or EMI receiver.</p>
+					</div>
+					<div class="benefit-card">
+						<span class="bc-icon">&#128274;</span>
+						<h4>PoE Compatible</h4>
+						<p>Rated up to 60&nbsp;V&nbsp;DC / 0,5&nbsp;A per pair, fully compatible with Power over Ethernet operating conditions.</p>
+					</div>
+				</div>
+
+
+				<h3>Technical specifications</h3>
+				<p class="spec-note">All values measured at room temperature (+23&nbsp;&deg;C) unless stated otherwise.</p>
+				<table>
+					<tbody>
+						<tr><th>Parameter</th><th>Value</th></tr>
+						<tr><td>Frequency Range</td><td>150&nbsp;kHz &ndash; 30&nbsp;MHz</td></tr>
+						<tr><td>Common-Mode Impedance</td><td>150&nbsp;&Omega; &plusmn; 20&nbsp;&Omega;</td></tr>
+						<tr><td>Voltage Division Factor (VDF)</td><td>9.5&nbsp;dB &plusmn; 1&nbsp;dB</td></tr>
+						<tr><td>EuT / AE Terminals</td><td>RJ45 (shielded housing)</td></tr>
+						<tr><td>Measuring Port</td><td>50&nbsp;&Omega; N-type (female)</td></tr>
+						<tr><td>Max. Voltage</td><td>60&nbsp;V DC</td></tr>
+						<tr><td>Max. Current</td><td>0,5&nbsp;A per pair</td></tr>
+						<tr><td>Dimensions (W &times; H &times; D)</td><td>106 &times; 73.7 &times; 100&nbsp;mm</td></tr>
+						<tr><td>Operating Temperature</td><td>+10&nbsp;&deg;C to +35&nbsp;&deg;C</td></tr>
+					</tbody>
+				</table>
+
+				<h3>Typical common-mode impedance</h3>
+				<p><img src="images/AANT8impedance.png" alt="Typical common-mode impedance of the AAN T8 &mdash; 150 kHz to 30 MHz" /></p>
+
+				<h3>Typical voltage division factor (VDF)</h3>
+				<p><img src="images/AANT8vdf.png" alt="Typical voltage division factor (VDF) of the AAN T8 &mdash; 150 kHz to 30 MHz" /></p>
+
+				<div class="cta-box">
+					<div class="cta-text">
+						<h3>Interested in the AAN T8?</h3>
+						<p>Contact us for pricing, lead time, or any technical questions.</p>
+					</div>
+					<a href="index.html#three" class="btn-cta">Get in touch &rarr;</a>
+				</div>
+
 			</div>
-		</footer>
+		</section>
+	</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; 2025 T-EMCompass. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
 
-	</body>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
 </html>

@@ -1,241 +1,439 @@
 <!DOCTYPE HTML>
 <!--
-	T-EMCompass by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	T-EMCompass
+	Based on Hyperspace by HTML5 UP | html5up.net | @ajlkn
+	CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
-		<title>T-EMCompass by HTML5 UP</title>
+		<title>T-EMCompass | EMC Troubleshooting Tools</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!-- SEO -->
+		<meta name="description" content="T-EMCompass develops professional EMC troubleshooting tools for electronics engineers — ISNs, near-field probes, debug LISNs and EMI visualisation software." />
+		<meta name="keywords" content="EMC, EMI, troubleshooting, ISN, LISN, near-field probe, RF current probe, EMC tools, electronics debugging, conducted emissions" />
+		<meta name="author" content="T-EMCompass" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="T-EMCompass | EMC Troubleshooting Tools" />
+		<meta property="og:description" content="Professional EMC troubleshooting tools for electronics engineers — hardware, software &amp; support." />
+		<meta property="og:type" content="website" />
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
+
 		<style>
-			/* Make all text in main section black */
-			/* Limit size of spotlight images */
+			/* -----------------------------------------------
+			   T-EMCompass — Professional Custom Styling
+			   ----------------------------------------------- */
+
+			/* Hero tagline */
+			#intro .tagline {
+				font-size: 1.25em;
+				font-weight: 300;
+				letter-spacing: 0.02em;
+				max-width: 580px;
+				opacity: 0.88;
+				margin-bottom: 2em;
+				line-height: 1.7;
+			}
+
+			/* Spotlight images — responsive & zoom on hover */
+			.wrapper.style2.spotlights section .image {
+				overflow: hidden;
+			}
 			.wrapper.style2.spotlights section .image img {
-			  max-width: 900px;  /* Adjust this value as needed */
-			  width: 100%;       /* make it responsive */
-			  height: auto;
-			  display: block;
-			  margin: 0 auto;    /* center horizontally */
+				max-width: 900px;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+				margin: 0 auto;
+				transition: transform 0.5s ease;
+			}
+			.wrapper.style2.spotlights section .image:hover img {
+				transform: scale(1.04);
+			}
+
+			/* Coming-soon badge */
+			.badge-soon {
+				display: inline-block;
+				font-size: 0.6em;
+				font-weight: 700;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
+				padding: 0.3em 0.8em;
+				border-radius: 2em;
+				border: 1px solid currentColor;
+				vertical-align: middle;
+				margin-left: 0.6em;
+				opacity: 0.65;
+				white-space: nowrap;
+			}
+
+			/* Button micro-lift on hover */
+			.button {
+				transition: background-color 0.2s ease,
+				            color 0.2s ease,
+				            border-color 0.2s ease,
+				            transform 0.15s ease !important;
+			}
+			.button:hover {
+				transform: translateY(-2px);
+			}
+
+			/* Feature list bullets */
+			#one .features section ul {
+				list-style: disc;
+				padding-left: 1.1em;
+				margin: 0.6em 0 0;
+				line-height: 1.8;
+			}
+
+			/* Input placeholder color */
+			input::placeholder,
+			textarea::placeholder {
+				opacity: 0.5;
+			}
+
+			/* VAT number styling */
+			.vat-number {
+				font-size: 0.82em;
+				opacity: 0.7;
+				margin-top: 0.3em;
+				display: block;
+			}
+
+			/* Footer */
+			#footer .inner {
+				font-size: 0.88em;
+			}
+
+			/* Scroll-reveal subtle border accent between sections */
+			#one.wrapper.style3 {
+				border-top: 3px solid rgba(255, 255, 255, 0.07);
 			}
 		</style>
-		
 	</head>
+
 	<body class="is-preload">
 
-		<!-- Sidebar -->
-			<section id="sidebar">
+		<!-- ================================================
+		     SIDEBAR
+		     ================================================ -->
+		<section id="sidebar">
+			<div class="inner">
+				<a href="#intro" class="image">
+					<img src="images/logo_EMC.png" alt="T-EMCompass logo" data-position="top center" />
+				</a>
+				<nav>
+					<ul>
+						<li><a href="#intro">Welcome</a></li>
+						<li><a href="#one">What we do</a></li>
+						<li><a href="#two">Products</a></li>
+						<li><a href="#three">Get in touch</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- ================================================
+		     MAIN CONTENT
+		     ================================================ -->
+		<div id="wrapper">
+
+			<!-- HERO / INTRO -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
 				<div class="inner">
-					<a href="#" class="image">
-					  <img src="images/logo_EMC.png" alt="" data-position="top center" />
-					</a>
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">What we do</a></li>
-							<li><a href="#two">Products</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
+					<h1>T-EMCompass</h1>
+					<p class="tagline">
+						Professional EMC troubleshooting tools for electronics engineers —
+						hardware, software &amp; support to help you find and fix EMI problems faster.
+					</p>
+					<ul class="actions">
+						<li><a href="#one" class="button scrolly">Discover our tools</a></li>
+					</ul>
 				</div>
 			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>T-EMCompass</h1>
-							<!--<p>Your way to an pass</a>.</p>-->
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- One -->
-					<section id="two" class="wrapper style2 spotlights">
-						<section>
-							<a href="AAN-T8.html" class="image"><img src="images/AANT8_2.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>AAN T8 for unshielded cables</h2>
-									<p>Measurement network for RJ45 unshielded cables.</p>
-									<ul class="actions">
-										<li><a href="AAN-T8.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="DCLISNV1.html" class="image"><img src="images/DebugLISN.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>DC DebugLISN </h2>
-									<p>Ideal for debugging of conducted DC applications.</p>
-									<ul class="actions">
-										<li><a href="DCLISNV1.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="DIY_RFcurrentprobe.html" class="image"><img src="images/RFProbe.png" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>RF currentprobe </h2>
-									<p>Ideal for debugging radiated emissions</p>
-									<ul class="actions">
-										<li><a href="DIY_RFcurrentprobe.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>AAN T8 shielded cables</h2>
-									<p>Measurement network for shielded cables.</p>
-									<ul class="actions">
-										<li><a href="" class="button">More info soon</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>2D EMI heatmap generator</h2>
-									<p>Software for generating EMI heatmaps using nearfeald probes and spectrum analyser.</p>
-									<ul class="actions">
-										<li><a href="" class="button">More info soon</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Two -->
-					<section id="one" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>We develop and deliver tools that help engineers efficiently troubleshoot electronic systems with the focus on EMC. Our focus is entirely on troubleshootingtools, not on product design or consultancy.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-microchip"></span>
-									<h3>Hardware Tools</h3>
-									<p>We design and supply specialized hardware to simplify and improve troubleshooting in electronics development, such as:<br><br> -Impedance Stabilisation Networks<br> -(ISNs)Measurement probes<br> -Immunity testers</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Software Solutions</h3>
-									<p>We develop software that supports and accelerates troubleshooting — from basic VISA controlling software to visualizing EMI.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-compass"></span>
-									<h3>Support</h3>
-									<p>Our products are accompanied by comprehensive educational resources, including:<br> -Manuals and tutorials <br> -Online content and practical workshops<br> -Expert advice on selecting and using the right tools<br>Goal: to ensure efficient and correct use of our tools, and to help prevent misuse.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-folder-open"></span>
-									<h3>Practicle examples</h3>
-									<p>Our products are accompanied by comprehensive educational resources, including:<br><br> <br>
-									<a href="" class="button">More info soon</a>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="" class="button">More info soon</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p></p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="mailto:t.emc.compass@gmail.com?subject=contact%20form%20website" enctype="text/plain">
-									  <div class="fields">
-										<div class="field half">
-										  <label for="name">Name</label>
-										  <input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-										  <label for="email">Email</label>
-										  <input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-										  <label for="message">Message</label>
-										  <textarea name="message" id="message" rows="5"></textarea>
-										</div>
-									  </div>
-									  <ul class="actions">
-										<li><button type="submit" class="button submit">Send Message</button></li>
-									  </ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>Europalaan 3<br />
-											9140 Steendorp<br />
-											Belgium<br />
-											BE1029.024.696</span>
-											
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">t.emc.compass@gmail.com</a>
-										</li>
-										<!--<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>-->
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
-												<li><a href="https://www.linkedin.com/company/t-emcompass/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
+			<!-- WHAT WE DO -->
+			<section id="one" class="wrapper style3 fade-up">
 				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+					<h2>What we do</h2>
+					<p>
+						We develop and deliver tools that help engineers efficiently troubleshoot
+						electronic systems, with a sharp focus on EMC. Our mission is entirely
+						centred on debugging tools — not product design, not consultancy.
+					</p>
+					<div class="features">
+
+						<section>
+							<span class="icon solid major fa-microchip"></span>
+							<h3>Hardware Tools</h3>
+							<p>Specialised hardware to simplify and speed up troubleshooting:</p>
+							<ul>
+								<li>Impedance Stabilisation Networks (ISNs)</li>
+								<li>Measurement probes</li>
+								<li>Immunity testers</li>
+							</ul>
+						</section>
+
+						<section>
+							<span class="icon solid major fa-desktop"></span>
+							<h3>Software Solutions</h3>
+							<p>
+								Software that supports and accelerates troubleshooting — from VISA
+								instrument control scripts to 2D EMI near-field heatmap generation.
+							</p>
+						</section>
+
+						<section>
+							<span class="icon solid major fa-compass"></span>
+							<h3>Support &amp; Education</h3>
+							<p>Every product is backed by comprehensive resources:</p>
+							<ul>
+								<li>Manuals and step-by-step tutorials</li>
+								<li>Online support &amp; practical onside help</li>
+								<li>Expert guidance on selecting the right tools</li>
+							</ul>
+						</section>
+
+						<section>
+							<span class="icon solid major fa-folder-open"></span>
+							<h3>Practical Examples</h3>
+							<p>
+								Real-world case studies and application notes showing exactly how
+								our tools tackle genuine EMC challenges in the field.
+							</p>
+							<ul class="actions" style="margin-top: 1.2em;">
+								<li><a href="#three" class="button small scrolly">Stay informed</a></li>
+							</ul>
+						</section>
+
+					</div>
 				</div>
-			</footer>
+			</section>
+			
+
+
+
+			<!-- PRODUCTS -->
+			<section id="two" class="wrapper style2 spotlights">
+			
+							<!-- 2D EMI Heatmap Generator -->
+				<section>
+					<a href="EMIMapGenerator.html" class="image">
+						<img src="images/Heatmap.png" alt="EMI Map Generator — EMI heatmap software" data-position="25% 25%" />
+					</a>
+					<div class="content">
+						<div class="inner">
+							<h2>EMI Map Generator</h2>
+							<p>
+								Software for generating EMI near-field heatmaps using any near-field probe,
+								a standard USB webcam, and a compatible spectrum analyser.
+								Supports Rohde &amp; Schwarz FPL, Siglent SSA3000X, and RIGOL DSA series.
+							</p>
+							<ul class="actions">
+								<li><a href="EMIMapGenerator.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- AAN T8 Unshielded -->
+				<section>
+					<a href="AAN-T8.html" class="image">
+						<img src="images/AANT8_2.png" alt="AAN T8 impedance stabilisation network for unshielded RJ45 cables" data-position="center center" />
+					</a>
+					<div class="content">
+						<div class="inner">
+							<h2>AAN T8 — Unshielded Cables</h2>
+							<p>
+								Impedance Stabilisation Network (ISN) for RJ45 unshielded cables.
+								Purpose-built for conducted emission measurements.
+							</p>
+							<ul class="actions">
+								<li><a href="AAN-T8.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- DC DebugLISN -->
+				<section>
+					<a href="DCLISNV1.html" class="image">
+						<img src="images/DebugLISN.png" alt="DC DebugLISN for conducted emission debugging on DC power lines" data-position="center center" />
+					</a>
+					<div class="content">
+						<div class="inner">
+							<h2>DC DebugLISN</h2>
+							<p>
+								Line Impedance Stabilisation Network (LISN) optimised for debugging
+								conducted emissions on DC power lines. Compact, affordable and
+								fieldwork-ready.
+							</p>
+							<ul class="actions">
+								<li><a href="DCLISNV1.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- RF Current Probe -->
+				<section>
+					<a href="DIY_RFcurrentprobe.html" class="image">
+						<img src="images/RFProbe.png" alt="DIY RF current probe for near-field radiated emission debugging" data-position="center center" />
+					</a>
+					<div class="content">
+						<div class="inner">
+							<h2>RF Current Probe</h2>
+							<p>
+								DIY near-field RF current probe — ideal for tracking down radiated
+								emission sources during pre-compliance testing and lab debugging sessions.
+							</p>
+							<ul class="actions">
+								<li><a href="DIY_RFcurrentprobe.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- AAN T8 Shielded — Coming Soon -->
+				<section>
+					<a href="#" class="image">
+						<img src="images/pic02.jpg" alt="AAN T8 for shielded cables — in development" data-position="top center" />
+					</a>
+					<div class="content">
+						<div class="inner">
+							<h2>AAN T8 — Shielded Cables <span class="badge-soon">Soon</span></h2>
+							<p>
+								Impedance Stabilisation Network for shielded cables. Currently in
+								development — get in touch to be notified when it launches.
+							</p>
+							<ul class="actions">
+								<li><a href="#three" class="button scrolly">Notify me</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				
+				<!-- Custom Request -->
+				<section>
+					<a href="#three" class="image scrolly">
+						<img src="images/pic04.jpg" alt="Custom EMC request — T-EMCompass" data-position="center center" />
+					</a>
+					<div class="content">
+						<div class="inner">
+							<h2>Custom Request</h2>
+							<p>
+								Not finding exactly what you need? We take on custom projects — whether it's
+								a tailored impedance network, a modified measurement setup, or a specific
+								software feature. Describe your challenge and we'll see what we can build.
+							</p>
+							<ul class="actions">
+								<li><a href="#three" class="button scrolly">Get in touch</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+			</section>
+
+			<!-- GET IN TOUCH -->
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Get in touch</h2>
+					<p>
+						Questions about a product, interested in ordering, or want to stay
+						informed about upcoming releases? We'd love to hear from you.
+					</p>
+					<div class="split style1">
+
+						<section>
+							<!--
+							  TIP: Replace the mailto action below with a free Formspree endpoint
+							  for a reliable, spam-protected contact form on GitHub Pages:
+							  https://formspree.io  →  action="https://formspree.io/f/YOUR_ID"
+							-->
+							<form id="contact-form" method="post" action="mailto:t.emc.compass@gmail.com" enctype="text/plain">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" placeholder="Your full name" required />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" placeholder="your@email.com" required />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5" placeholder="How can we help you?" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><button type="submit" class="button submit">Send Message</button></li>
+								</ul>
+							</form>
+						</section>
+
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									<span>
+										Europalaan 3<br />
+										9140 Steendorp<br />
+										Belgium
+										<span class="vat-number">VAT: BE1029.024.696</span>
+									</span>
+								</li>
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:t.emc.compass@gmail.com">t.emc.compass@gmail.com</a>
+								</li>
+								<li>
+									<h3>Follow us</h3>
+									<ul class="icons">
+										<li>
+											<a href="https://www.linkedin.com/company/t-emcompass/"
+											   class="icon brands fa-linkedin-in"
+											   target="_blank"
+											   rel="noopener noreferrer">
+												<span class="label">LinkedIn</span>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+
+					</div>
+				</div>
+			</section>
+
+		</div><!-- end #wrapper -->
+
+		<!-- ================================================
+		     FOOTER
+		     ================================================ -->
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; 2025 T-EMCompass. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
